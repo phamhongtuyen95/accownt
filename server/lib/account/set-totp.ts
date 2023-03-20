@@ -17,7 +17,7 @@ export async function setTOTP(
     return {};
   } else {
     const sec = speakeasy.generateSecret({
-      name: `${NAME}:${user.email}`,
+      name: user.email,
       issuer: NAME
     });
     let url = sec.otpauth_url;
